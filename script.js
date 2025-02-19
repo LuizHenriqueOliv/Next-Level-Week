@@ -1,4 +1,6 @@
 const app = document.getElementById("app")
+
+
 const users = [
     {
         email: 'test@test.com',
@@ -12,9 +14,13 @@ const users = [
         ref: 200,
         refBy: 100
     }
-
 ]
 
+const getUser = (userData) => {
+    return users.find((user) => {
+        return user.email == userData.email   
+    })
+}
 
 const formAction = () => {
     const form = document.getElementById("form")
@@ -25,6 +31,9 @@ const formAction = () => {
             email: formData.get('email'),
             phone: formData.get('phone')
         }
+
+        const user = getUser(userData)
+        console.log(user)
     }
 }
 
