@@ -91,7 +91,7 @@ const formAction = () => {
         }
 
         const user = getUser(userData)
-        if (true) {
+        if (user) {
             showInvite(user)
         } else {
             const newUser = saveUser(userData)
